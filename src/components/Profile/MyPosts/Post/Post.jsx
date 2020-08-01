@@ -1,0 +1,17 @@
+import React from 'react';
+import classes from './Post.module.css';
+
+const Post = (props) => {
+    return (
+
+        <div className={classes.item}>
+            <img src='https://i.ytimg.com/vi/48jatw-mm9s/maxresdefault.jpg'></img>
+                        {props.message}
+            <div>
+                <span>Like</span> {props.likesCounter}
+            </div>
+        </div>
+    )
+}
+
+export default Post;
