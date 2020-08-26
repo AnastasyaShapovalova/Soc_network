@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const DELETE_POST = 'DELETE_POST';
 
 let initialState = {
     posts: [
@@ -31,12 +32,19 @@ const profileReducer = (state = initialState, action) => {
                 newPostText: action.newText
             };
         }
+        case DELETE_POST: {
+            return {
+                ...state,
+                posts: state.posts.filter(p => p.id !== action.id)
+            }
+        }
         default:
             return state;
     }
 }
 
 export const  addPostActionCreator = () => ({type: ADD_POST})
+export const  deletePostActionCreator = (id) => ({type: DELETE_POST, id})
 export const  updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText:text})
 
 export default profileReducer;
