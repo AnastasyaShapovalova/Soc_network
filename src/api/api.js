@@ -42,13 +42,9 @@ export const profileAPI = {
 export const authAPI = {
     me() {
         return instance.get(`auth/me`)
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, {email, password, rememberMe} )
     }
 }
 
-
-export const getUsers2 = (currentPage = 1, pageSize = 10) => {
-    return instance.get(`follow?page=${currentPage}&count=${pageSize}`)
-        .then (response => {
-            return response.data;
-        });
-}
