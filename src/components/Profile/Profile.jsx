@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 const Profile = (props) => {
 
@@ -16,4 +17,4 @@ const Profile = (props) => {
     )
 }
 
-export default Profile;
+export default withAuthRedirect(Profile);
