@@ -1,4 +1,4 @@
-import preLoader from "../../../assets/images/Spin-1s-200px.svg";
+import preLoader from "../../../utils/images/";
 import React from "react";
 
 let Preloader = (props) => {
